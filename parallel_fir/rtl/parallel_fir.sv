@@ -5,6 +5,8 @@
 // Author        :   Ritika Ratnu
 // --------------------------------
 
+import pkg::*;
+
 module parallel_fir(
     input                       CLK,
     input                       RST,
@@ -24,6 +26,7 @@ wire FSM_OUT_VALID;
 shift_register SHIFT_REGISTER_1(
     .CLK(CLK),
     .RST(RST),
+    .SHIFT_REG_IN_VALID(DATA_IN_VALID),
     .SHIFT_REG_IN(DATA_IN),
     .SHIFT_REG_OUT(AU_DATA_IN)
 );
@@ -63,4 +66,4 @@ end
 
 DATA_OUT_VALID <= FSM_OUT_VALID;
 
-end module;
+endmodule;
